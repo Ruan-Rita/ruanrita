@@ -77,11 +77,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./out
       - name: Next Pages
         uses: anorcle/next-pages@v1.0
         with:
