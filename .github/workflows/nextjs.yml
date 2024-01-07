@@ -56,11 +56,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
-          static_site_generator: ./out
-          path: ./out
+          static_site_generator:  next
       - name: Restore cache
         uses: actions/cache@v3
-
         with:
           path: |
             .next/cache
@@ -73,15 +71,17 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Move File to root
+        run: mv ./out/* .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./out
+      # - name: Build with Jekyll
+      #   uses: actions/jekyll-build-pages@v1
+      #   with:
+      #     source: ./
+      #     destination: ./out
 
   # Deployment job
   deploy:
