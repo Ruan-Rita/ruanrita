@@ -84,11 +84,11 @@ jobs:
           destination: ./out
       - name: Next Pages
         uses: anorcle/next-pages@v1.0
-          with:
-            # Next.js Export Directory
-            inputDir: ./out
-            # GitHub Pages Host Directory
-            # outputDir: # optional, default is ./docs
+        with:
+          # Next.js Export Directory
+          inputDir: ./out
+          # GitHub Pages Host Directory
+          # outputDir: # optional, default is ./docs
 
   # Deployment job
   deploy:
