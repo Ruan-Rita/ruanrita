@@ -88,7 +88,7 @@ jobs:
           # Next.js Export Directory
           inputDir: ./out
           # GitHub Pages Host Directory
-          outputDir: ./ # optional, default is ./docs
+          outputDir: ./docs
 
   # Deployment job
   deploy:
