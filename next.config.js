@@ -21,6 +21,10 @@ const nextConfig = {
         },
       ]
     },
+    basePath: '/RuanRita',
+    images: {
+      unoptimized: true 
+    },
   }
 
 module.exports = nextConfig
