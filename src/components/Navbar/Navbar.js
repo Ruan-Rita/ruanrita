@@ -32,7 +32,7 @@ export default function NavBar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="text-white">
+              <div className="text-white font-bold">
                 RuanRita
               </div>
                 
@@ -45,7 +45,7 @@ export default function NavBar() {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            item.current ? 'bg-gray-900 text-white' : 'text-gray hover:bg-gray-700 hover:text-white',
                             'rounded-md px-3 py-2 text-sm font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -56,14 +56,6 @@ export default function NavBar() {
                     </div>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -71,7 +63,7 @@ export default function NavBar() {
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <span className="text-white">En</span>
+                      <span className="text-gray">En</span>
                     </Menu.Button>
                   </div>
                   <Transition

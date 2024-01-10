@@ -20,7 +20,12 @@ body {
     Helvetica Neue,
     sans-serif;
 }
-
+/* :root {
+  --primary-color: #FB5555;
+  --gray-color: #70B1BA;
+  --background-color: #282C33;
+  --white-color: #ECF9FF;
+} */
 a {
   color: inherit;
   text-decoration: none;
@@ -35,8 +40,4 @@ a {
 img {
   max-width: 100%;
   height: auto;
-}
-
-button {
-  border: none
 }
