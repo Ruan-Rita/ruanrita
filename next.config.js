@@ -12,7 +12,19 @@ const nextConfig = {
 
     // Optional: Change the output directory `out` -> `dist`
     // distDir: 'dist',
+    async redirects() {
+      return [
+        {
+          source: '/payments',
+          destination: '/',
+          permanent: true,
+        },
+      ]
+    },
     basePath: '/RuanRita',
+    images: {
+      unoptimized: true 
+    },
   }
 
 module.exports = nextConfig
