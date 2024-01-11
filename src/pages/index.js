@@ -17,7 +17,7 @@ export default function Home() {
             <div className="w-full flex justify-center">
               <div>
                 <div className="block mx-auto bg-primary w-44 h-w-44 rounded-full">
-                  <Image width={176} height={176} src="RuanRita/logo_.png"></Image>
+                  <Image width={176} height={176} src="/RuanRita/logo_.png"></Image>
                 </div>
                 <div className="mt-12">
                   <div className="w-max flex items-center p-2 border border-gray pr-5 ">
