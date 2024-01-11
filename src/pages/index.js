@@ -1,6 +1,6 @@
-import NavBar from "../components/Navbar/navbar";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import NavBar from "../components/Navbar/navbar";
 export default function Home() {
   return (
     <main className='bg-background w-full flex flex-col min-h-screen'>
