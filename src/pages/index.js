@@ -1,6 +1,11 @@
-import { ChevronDoubleRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import NavBar from "../components/Navbar/navbar";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaDiscord, FaLongArrowAltRight } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
+import CardProject from "../components/Card/card-project";
+import Footer from "../components/footer/footer";
+
 export default function Home() {
   return (
     <main className='bg-background w-full flex flex-col min-h-screen'>
@@ -34,60 +39,31 @@ export default function Home() {
         
         {/* motivation phase */}
         <div className="max-w-2xl mx-auto">
-          <div className="mt-12 flex flex-col">
+          <div className="mt-12 flex flex-col relative">
+            <FaQuoteLeft className="text-white w-9 h-9 absolute -top-5 left-8 bg-background p-2"/>
             <span className="text-white border border-gray px-10 py-6">With great power comes great electricity bill</span>
-            <span className="text-white border border-gray px-5 py-5 self-end">- Dr. Who</span>
+            <span className="text-white border border-gray px-5 py-5 self-end border-t-0">- Dr. Who</span>
+            <FaQuoteLeft className="text-white w-9 h-9 absolute top-14 right-10 bg-background p-2"/>
           </div>
         </div>
         {/* My projects */}
-        <section className="my-16">
+        <section className="my-16" id="WORK">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <h1 className="text-white text-2xl font-bold mr-12"><b className="text-primary">#</b> Projects</h1>
               <hr className="bg-primary border-primary w-80"></hr>
             </div>
             <div className="flex items-center">
-              <h1 className="text-white mr-2">View all</h1>
-              <ChevronDoubleRightIcon className="text-white" width={20}/>
+              <a href="/RuanRita/projects">
+                <h1 className="text-white mr-2">View all</h1>
+              </a>
+              <FaLongArrowAltRight className="text-white" width={20}/>
             </div>
           </div>
           <section className="mt-10 grid grid-cols-3 gap-8">
-            <div className="border-2 border-gray">
-              <img src="/RuanRita/project_1.png" className="w-full h-[230px] object-cover block" />
-              <p className="p-4 border-b-2 text-gray border-gray">HTML CSS JS PHP LARAVEL TAILwind</p>  
-              <div className="p-4">
-                <h1 className="text-white font-bold">ChertNodes</h1>
-                <p className="text-white min-h-14">minecraft servers hosting</p>
-                <div>
-                  <button className="border w-24 mr-4 border-primary px-5 py-2 text-white">Live</button>
-                  <button className="border w-24 border-gray px-5 py-2 text-white">Cached</button>
-                </div>
-              </div>
-            </div>
-            <div className="border-2 border-gray">
-              <img src="/RuanRita/project_2.png" className="w-full h-[230px] object-cover block" />
-              <p className="p-4 border-b-2 text-gray border-gray">HTML CSS JS PHP LARAVEL TAILwind</p>  
-              <div className="p-4">
-                <h1 className="text-white font-bold">ChertNodes</h1>
-                <p className="text-white min-h-14">minecraft servers hosting</p>
-                <div>
-                  <button className="border w-24 mr-4 border-primary px-5 py-2 text-white">Live</button>
-                  <button className="border w-24 border-gray px-5 py-2 text-white">Cached</button>
-                </div>
-              </div>
-            </div>
-            <div className="border-2 border-gray">
-              <img src="/RuanRita/project_3.jpg" className="w-full h-[230px] object-cover block" />
-              <p className="p-4 border-b-2 text-gray border-gray">HTML CSS JS PHP LARAVEL TAILwind</p>  
-              <div className="p-4">
-                <h1 className="text-white font-bold">ChertNodes</h1>
-                <p className="text-white min-h-14">minecraft servers hosting</p>
-                <div>
-                  <button className="border w-24 mr-4 border-primary px-5 py-2 text-white">Live</button>
-                  <button className="border w-24 border-gray px-5 py-2 text-white">Cached</button>
-                </div>
-              </div>
-            </div>
+            <CardProject title="HTML CSS JS PHP LARAVEL TAILwind" description="minecraft servers hosting" image="/RuanRita/project_1.png" name="ChertNodes"/>
+            <CardProject title="HTML CSS JS PHP LARAVEL TAILwind" description="minecraft servers hosting" image="/RuanRita/project_2.png" name="ChertNodes"/>
+            <CardProject title="HTML CSS JS PHP LARAVEL TAILwind" description="minecraft servers hosting" image="/RuanRita/project_3.jpg" name="ChertNodes"/>
           </section>
         </section>
         {/* My skills */}
@@ -99,7 +75,7 @@ export default function Home() {
             </div>
             <div className="flex items-center">
               <h1 className="text-white mr-2">View all</h1>
-              <ChevronDoubleRightIcon className="text-white" width={20}/>
+              <FaLongArrowAltRight className="text-white" width={20}/>
             </div>
           </div>
           <section className="flex justify-between">
@@ -143,7 +119,7 @@ export default function Home() {
           </section>
         </section>
         {/* About me*/}
-        <section className="my-16">
+        <section className="my-16" id="ABOUT">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center">
               <h1 className="text-white text-2xl font-bold mr-12"><b className="text-primary">#</b> About-me</h1>
@@ -151,7 +127,7 @@ export default function Home() {
             </div>
             <div className="flex items-center">
               <h1 className="text-white mr-2">View all</h1>
-              <ChevronDoubleRightIcon className="text-white" width={20}/>
+              <FaLongArrowAltRight className="text-white" width={20}/>
             </div>
           </div>
           <section className="flex justify-between gap-5">
@@ -166,7 +142,7 @@ export default function Home() {
           </section>
         </section>
         {/* contacts*/}
-        <section className="my-16">
+        <section className="my-16" id="CONTACTS">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center">
               <h1 className="text-white text-2xl font-bold mr-12"><b className="text-primary">#</b> Contacts</h1>
@@ -174,23 +150,19 @@ export default function Home() {
             </div>
             <div className="flex items-center">
               <h1 className="text-white mr-2">View all</h1>
-              <ChevronDoubleRightIcon className="text-white" width={20}/>
+              <FaLongArrowAltRight className="text-white" width={20}/>
             </div>
           </div>
           <section className="flex justify-between">
             <p className="w-1/2 text-gray tracking-widest leading-6 mb-6">I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me</p>
             <div className="border border-gray h-min">
               <h1 className="p-2 text-white">Message me here</h1>
-              <span className="p-2 text-gray flex align-middle">
-                <svg width="32px" height="32px" viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg"  className="mr-2 fill-gray">
-                  <g>
-                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill-rule="nonzero"></path>
-                  </g>
-                </svg>
+              <span className="p-2 text-gray flex items-center">
+                <FaDiscord className="mr-2 text-gray w-8 h-8"/>
                 <p>ruan.ritah</p>
               </span>
-              <span className="p-2 text-gray flex align-middle">
-                <EnvelopeIcon width={32} className="mr-2 text-gray"/>
+              <span className="p-2 text-gray flex items-center">
+                <MdOutlineEmail width={32} className="mr-2 w-8 h-8 text-gray"/>
                 <p>ruan.ritah@gamil.com</p>
               </span>
             </div>
@@ -198,39 +170,7 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="border-t border-gray py-16">
-        <div className="max-w-7xl mx-auto w-full flex flex-col px-2 sm:px-6 lg:px-8">
-          <div className="flex justify-between">
-            <div>
-              <h1 className="text-white text-xl inline mr-5">RuanRita</h1>
-              <span className="text-gray">ruan.ritah@gmail.com</span>
-              <p className="text-white mt-2">Back-end developer and Front-end developer</p>
-            </div>
-            <div>
-              <h1 className="text-white text-2xl">Media</h1>
-              <div className="flex gap-3 mt-5">
-                <svg width="32px" height="32px" viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg"  className="mr-2 fill-gray">
-                  <g>
-                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill-rule="nonzero"></path>
-                  </g>
-                </svg>
-                <svg width="32px" height="32px" viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg"  className="mr-2 fill-gray">
-                  <g>
-                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill-rule="nonzero"></path>
-                  </g>
-                </svg>
-                <svg width="32px" height="32px" viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg"  className="mr-2 fill-gray">
-                  <g>
-                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill-rule="nonzero"></path>
-                  </g>
-                </svg>
-              </div>
-              
-            </div>
-          </div>
-          <h1 className="text-center text-gray text-lg mt-16">© Copyright 2022. Made by RuanRita</h1>
-        </div>
-      </section>
+      <Footer />
     </main> 
   );
 }
