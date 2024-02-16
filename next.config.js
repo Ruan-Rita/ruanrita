@@ -12,18 +12,18 @@ const nextConfig = {
 
     // Optional: Change the output directory `out` -> `dist`
     // distDir: 'dist',
-    async redirects() {
-      return [
-        {
-          source: '/payments',
-          destination: '/',
-          permanent: true,
-        },
-      ]
-    },
-    basePath: '/RuanRita',
+    // async redirects() {
+    //   return [
+    //     {
+    //       source: '/payments',
+    //       destination: '/',
+    //       permanent: true,
+    //     },
+    //   ]
+    // },
+    basePath: '/',
     images: {
-      unoptimized: true 
+      unoptimized: true
     },
   }
 
