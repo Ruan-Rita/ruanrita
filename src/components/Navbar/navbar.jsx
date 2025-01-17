@@ -5,10 +5,10 @@ import { HiBars3 } from "react-icons/hi2";
 
 
 const navigation = [
-  { name: '# Home', href: '/RuanRita', current: true },
-  { name: '# Works', href: '#WORK', current: false },
-  { name: '# About-me', href: '#ABOUT', current: false },
-  { name: '# Contacts', href: '#CONTACTS', current: false },
+  { name: 'HOME', href: '/RuanRita', current: false },
+  { name: 'WORKS', href: '#WORK', current: false },
+  { name: 'ABOUT-ME', href: '#ABOUT', current: false },
+  { name: 'CONTACTS', href: '#CONTACTS', current: false },
 ]
 
 function classNames(...classes) {
@@ -17,14 +17,14 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white fixed w-full z-10">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-24 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -34,9 +34,9 @@ export default function NavBar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="text-white font-bold">
-                RuanRita
-              </div>
+              <h1 className="text-slate-600 font-bold text-xl">
+                RUAN RITA
+              </h1>
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mr-3">
@@ -47,8 +47,8 @@ export default function NavBar() {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'text-gray hover:bg-gray-700 hover:text-white',
-                            'rounded-md px-3 py-2 text-sm font-medium'
+                            item.current ? 'bg-gray-900 text-black' : 'text-cyan-500 hover:bg-gray-700 hover:text-black',
+                            'rounded-md px-3 py-2 text-lg font-medium'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -64,8 +64,7 @@ export default function NavBar() {
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <span className="text-gray">En</span>
+                      <span className="text-primary text-md font-bold">ENGLISH</span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -84,7 +83,7 @@ export default function NavBar() {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
+                            Portuguese
                           </a>
                         )}
                       </Menu.Item>
@@ -94,17 +93,7 @@ export default function NavBar() {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
+                            English
                           </a>
                         )}
                       </Menu.Item>
@@ -123,7 +112,7 @@ export default function NavBar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-black' : 'text-gray-300 hover:bg-gray-700 hover:text-black',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

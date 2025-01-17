@@ -35,9 +35,17 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'circular'
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+
+.custom-intro {
+  background-image: url('/circuit-board.svg');
+  background-size: contain; /* or 'cover' */
+  background-repeat: repeat;
 }
