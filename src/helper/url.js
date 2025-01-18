@@ -1,12 +1,8 @@
-export function ImageUrl(path) {
+export function Url(path) {
     const fullPath = '';
     const firstString = String(path).substring(0, 1);
 
-    console.log('TEST', process.env.NODE_ENV);
-    
     if (process.env.NODE_ENV !== 'development') {
-        console.log(`is here`);
-        
         fullPath = '/RuanRita'
     }
     
@@ -15,6 +11,5 @@ export function ImageUrl(path) {
     }
 
     const pathToFile = `${fullPath}${path}`; 
-    console.log(`PATH`, pathToFile);
     return pathToFile;
 }

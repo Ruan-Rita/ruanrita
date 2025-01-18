@@ -2,13 +2,17 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { FaXmark } from "react-icons/fa6";
 import { HiBars3 } from "react-icons/hi2";
+import { useLanguage } from '../../context/language-context';
+import Trans from '../../helper/language/trans';
+import Image from 'next/image';
+import ProfilePicutre from '../../../public/profile.jpg'
 
 
 const navigation = [
-  { name: 'HOME', href: '/RuanRita', current: false },
-  { name: 'WORKS', href: '#WORK', current: false },
-  { name: 'ABOUT-ME', href: '#ABOUT', current: false },
-  { name: 'CONTACTS', href: '#CONTACTS', current: false },
+  { name: 'home', href: '/RuanRita', current: false },
+  { name: 'works', href: '#WORK', current: false },
+  { name: 'about', href: '#ABOUT', current: false },
+  { name: 'contacts', href: '#CONTACTS', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,6 +20,8 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+  const {language, changeLanguage} = useLanguage();
+
   return (
     <Disclosure as="nav" className="bg-white fixed w-full z-10">
       {({ open }) => (
@@ -26,7 +32,6 @@ export default function NavBar() {
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
                   {open ? (
                     <FaXmark Icon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -34,9 +39,12 @@ export default function NavBar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <h1 className="text-slate-600 font-bold text-xl">
-                RUAN RITA
-              </h1>
+              <div className="flex gap-4 items-center">
+                <Image width={60} className="border border-black rounded-full" alt='Profile picture' src={ProfilePicutre}/>
+                <h1 className="text-slate-600 font-bold text-xl">
+                  RUAN RITA
+                </h1>
+              </div>
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mr-3">
@@ -52,7 +60,7 @@ export default function NavBar() {
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
-                          {item.name}
+                          {Trans(item.name).toUpperCase()}
                         </a>
                       ))}
                     </div>
@@ -64,7 +72,7 @@ export default function NavBar() {
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
-                      <span className="text-primary text-md font-bold">ENGLISH</span>
+                      <span className="text-primary text-md font-bold">{Trans(language)}</span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -78,24 +86,22 @@ export default function NavBar() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Portuguese
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          onClick={() => changeLanguage('pt')}
+                          className={classNames(language === 'pt' ? 'bg-primary text-white' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        >
+                          {Trans('pt')}
+                        </a>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            English
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          onClick={() => changeLanguage('en')}
+                          className={classNames(language === 'en' ? 'bg-primary text-white' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        >
+                          {Trans('en')}
+                        </a>
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>

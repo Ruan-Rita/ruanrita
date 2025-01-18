@@ -45,7 +45,6 @@ img {
 
 
 .custom-intro {
-  background-image: url('/circuit-board.svg');
   background-size: contain; /* or 'cover' */
   background-repeat: repeat;
 }

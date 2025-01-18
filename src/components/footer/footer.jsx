@@ -7,7 +7,6 @@ export default function Footer() {
                 <div className="flex justify-between">
                     <div>
                         <h1 className="text-white text-xl inline mr-5">RuanRita</h1>
-                        <span className="text-gray">ruan.ritah@gmail.com</span>
                         <p className="text-white mt-2">Back-end developer and Front-end developer</p>
                     </div>
                     <div>
@@ -20,7 +19,6 @@ export default function Footer() {
 
                     </div>
                 </div>
-                <h1 className="text-center text-gray text-lg mt-16">© Copyright 2022. Made by RuanRita</h1>
             </div>
         </section>
     )
